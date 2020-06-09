@@ -180,8 +180,10 @@ function calculation() {
   if(this.operator === "/" && inputScreen.value !== ""){
 
     if (valueOne !== 0) {
-      total = valueOne / valueTwo;      
+      total = valueOne / valueTwo; 
+      console.log(total);   
       total = adjustThreeDecimals(total);
+      console.log(total); 
     } else{
       total = valueTwo;
     }
@@ -233,9 +235,8 @@ function transformPointToComma(value) {
 }
 
 function adjustThreeDecimals(value) {  
-  let resultTransform=value.toString();
-  let regex=/(\d*.\d{0,3})/;
-  return resultTransform.match(regex)[0];
+
+  return value.toFixed(3);
 
 }
 
